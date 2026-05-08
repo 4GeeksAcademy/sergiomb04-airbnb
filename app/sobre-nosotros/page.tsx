@@ -17,7 +17,7 @@ const storySections = [
   },
 ];
 
-export default function SobreNosotrosPage() {
+const SobreNosotrosPage = () => {
   return (
     <>
       <Navbar />
@@ -73,4 +73,6 @@ export default function SobreNosotrosPage() {
       <Footer />
     </>
   );
-}
+};
+
+export default SobreNosotrosPage;

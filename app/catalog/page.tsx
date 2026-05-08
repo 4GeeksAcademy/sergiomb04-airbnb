@@ -8,7 +8,7 @@ import { Navbar } from "@/components/navbar";
 
 type SortOrder = "asc" | "desc";
 
-export default function CatalogPage() {
+const CatalogPage = () => {
   const [sortOrder, setSortOrder] = useState<SortOrder>("asc");
 
   const sortedListings = useMemo(() => {
@@ -67,4 +67,6 @@ export default function CatalogPage() {
       <Footer />
     </>
   );
-}
+};
+
+export default CatalogPage;

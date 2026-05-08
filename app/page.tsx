@@ -8,7 +8,7 @@ import { Navbar } from "@/components/navbar";
 import { RegionStrip } from "@/components/region-strip";
 import type { Listing, ListingCategory } from "@/types/listing";
 
-export default function Home() {
+const Home = () => {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<ListingCategory | "all">(
     "all",
@@ -108,4 +108,6 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+};
+
+export default Home;

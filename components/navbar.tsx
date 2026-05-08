@@ -9,11 +9,11 @@ type NavbarProps = {
   onSearchChange?: (value: string) => void;
 };
 
-export function Navbar({
+export const Navbar = ({
   minimal = false,
   searchValue,
   onSearchChange,
-}: NavbarProps) {
+}: NavbarProps) => {
   if (minimal) {
     return (
       <header className="sticky top-0 z-30 border-b border-stone-200/80 bg-white/95 backdrop-blur">
@@ -105,4 +105,4 @@ export function Navbar({
       </div>
     </header>
   );
-}
+};

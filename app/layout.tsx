@@ -19,11 +19,11 @@ export const metadata: Metadata = {
     "Clon visual de Airbnb hecho con Next.js 16 y Tailwind CSS en enfoque mobile-first.",
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html
       lang="es"
@@ -32,4 +32,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
-}
+};
+
+export default RootLayout;

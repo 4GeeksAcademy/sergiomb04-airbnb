@@ -6,11 +6,11 @@ type RegionStripProps = {
   onSelect: (category: ListingCategory | "all") => void;
 };
 
-export function RegionStrip({
+export const RegionStrip = ({
   categories,
   activeCategory,
   onSelect,
-}: RegionStripProps) {
+}: RegionStripProps) => {
   return (
     <section aria-label="Filtros por categoría" className="mt-8">
       <div className="no-scrollbar -mx-4 overflow-x-auto px-4 md:mx-0 md:px-0">
@@ -50,4 +50,4 @@ export function RegionStrip({
       </div>
     </section>
   );
-}
+};

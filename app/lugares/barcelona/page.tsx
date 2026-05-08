@@ -3,7 +3,7 @@ import { Footer } from "@/components/footer";
 import { barcelonaGallery } from "@/components/mock-data";
 import { Navbar } from "@/components/navbar";
 
-export default function BarcelonaPage() {
+const BarcelonaPage = () => {
   return (
     <>
       <Navbar minimal />
@@ -57,4 +57,6 @@ export default function BarcelonaPage() {
       <Footer />
     </>
   );
-}
+};
+
+export default BarcelonaPage;

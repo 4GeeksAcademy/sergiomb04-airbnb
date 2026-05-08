@@ -7,7 +7,10 @@ type ListingCardProps = {
   href?: string;
 };
 
-export function ListingCard({ listing, href = `/rooms/${listing.id}` }: ListingCardProps) {
+export const ListingCard = ({
+  listing,
+  href = `/rooms/${listing.id}`,
+}: ListingCardProps) => {
   return (
     <Link
       href={href}
@@ -34,4 +37,4 @@ export function ListingCard({ listing, href = `/rooms/${listing.id}` }: ListingC
       </div>
     </Link>
   );
-}
+};

@@ -5,7 +5,7 @@ type FooterSectionProps = {
   links: Array<{ label: string; href: string }>;
 };
 
-function FooterSection({ title, links }: FooterSectionProps) {
+const FooterSection = ({ title, links }: FooterSectionProps) => {
   return (
     <div>
       <h3 className="text-sm font-semibold uppercase tracking-wide text-stone-800">
@@ -22,9 +22,9 @@ function FooterSection({ title, links }: FooterSectionProps) {
       </ul>
     </div>
   );
-}
+};
 
-function SocialLink({
+const SocialLink = ({
   label,
   href,
   icon,
@@ -32,7 +32,7 @@ function SocialLink({
   label: string;
   href: string;
   icon: string;
-}) {
+}) => {
   return (
     <a
       href={href}
@@ -44,9 +44,9 @@ function SocialLink({
       <span>{label}</span>
     </a>
   );
-}
+};
 
-export function Footer() {
+export const Footer = () => {
   return (
     <footer className="mt-auto border-t border-stone-200 bg-stone-50">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-4 md:px-6">
@@ -90,4 +90,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+};

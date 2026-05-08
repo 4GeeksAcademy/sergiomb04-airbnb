@@ -4,13 +4,13 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Footer } from "@/components/footer";
-import { getRoomById } from "@/components/mock-data";
 import { Navbar } from "@/components/navbar";
 import { RoomAmenitiesGrid } from "@/components/room/room-amenities-grid";
 import { RoomBookingCard } from "@/components/room/room-booking-card";
 import { RoomGallery } from "@/components/room/room-gallery";
 import { RoomHeader } from "@/components/room/room-header";
 import { RoomHostInfo } from "@/components/room/room-host-info";
+import { fetchRoomById } from "@/lib/fake-backend-client";
 import type { Room } from "@/types/room";
 
 const RoomDetailPage = () => {
@@ -19,16 +19,55 @@ const RoomDetailPage = () => {
 
   const [loading, setLoading] = useState(true);
   const [room, setRoom] = useState<Room | null>(null);
+  const [error, setError] = useState<string | null>(null);
   const [imageIndex, setImageIndex] = useState(0);
   const [guests, setGuests] = useState(1);
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setRoom(getRoomById(roomId));
-      setImageIndex(0);
-      setLoading(false);
-    }, 1000);
-    return () => window.clearTimeout(timer);
+    let isMounted = true;
+
+    const loadRoom = async () => {
+      if (Number.isNaN(roomId)) {
+        setRoom(null);
+        setLoading(false);
+        setError("ID de habitación inválido.");
+        return;
+      }
+
+      try {
+        setLoading(true);
+        setError(null);
+        const nextRoom = await fetchRoomById(roomId);
+
+        if (!isMounted) {
+          return;
+        }
+
+        setRoom(nextRoom);
+        setImageIndex(0);
+      } catch (loadError) {
+        if (!isMounted) {
+          return;
+        }
+
+        setRoom(null);
+        const message =
+          loadError instanceof Error
+            ? loadError.message
+            : "No se pudo conectar con el backend simulado.";
+        setError(message);
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    void loadRoom();
+
+    return () => {
+      isMounted = false;
+    };
   }, [roomId]);
 
   if (loading) {
@@ -48,7 +87,9 @@ const RoomDetailPage = () => {
       <>
         <Navbar minimal />
         <main className="mx-auto w-full max-w-6xl flex-1 px-4 py-8 md:px-6">
-          <p className="text-sm text-stone-700">No se encontró esta habitación.</p>
+          <p className="text-sm text-stone-700">
+            {error ?? "No se encontró esta habitación."}
+          </p>
           <Link
             href="/catalog"
             className="mt-4 inline-flex rounded-full border border-stone-300 px-4 py-2 text-sm font-medium text-stone-800 transition hover:bg-stone-100"

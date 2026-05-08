@@ -3,19 +3,21 @@
 import { useEffect, useState } from "react";
 import { Footer } from "@/components/footer";
 import { ListingCard } from "@/components/listing-card";
-import { categories, listings } from "@/components/mock-data";
 import { Navbar } from "@/components/navbar";
 import { RegionStrip } from "@/components/region-strip";
-import type { Listing, ListingCategory } from "@/types/listing";
+import { fetchCategories, fetchListings } from "@/lib/fake-backend-client";
+import type { Category, Listing, ListingCategory } from "@/types/listing";
 
 const Home = () => {
   const [query, setQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<ListingCategory | "all">(
     "all",
   );
+  const [categories, setCategories] = useState<Category[]>([]);
   const [allListings, setAllListings] = useState<Listing[]>([]);
   const [visibleListings, setVisibleListings] = useState<Listing[]>([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   const applyFilters = (
     source: Listing[],
@@ -35,12 +37,47 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const timer = window.setTimeout(() => {
-      setAllListings(listings);
-      setVisibleListings(listings);
-      setLoading(false);
-    }, 1000);
-    return () => window.clearTimeout(timer);
+    let isMounted = true;
+
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        setError(null);
+
+        const [nextCategories, nextListings] = await Promise.all([
+          fetchCategories(),
+          fetchListings(),
+        ]);
+
+        if (!isMounted) {
+          return;
+        }
+
+        setCategories(nextCategories);
+        setAllListings(nextListings);
+        setVisibleListings(nextListings);
+      } catch (loadError) {
+        if (!isMounted) {
+          return;
+        }
+
+        const message =
+          loadError instanceof Error
+            ? loadError.message
+            : "No se pudo conectar con el backend simulado.";
+        setError(message);
+      } finally {
+        if (isMounted) {
+          setLoading(false);
+        }
+      }
+    };
+
+    void loadData();
+
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   const handleSearchChange = (value: string) => {
@@ -91,6 +128,10 @@ const Home = () => {
           {loading ? (
             <div className="rounded-2xl border border-stone-200 bg-white p-6 text-sm text-stone-600 shadow-sm">
               Cargando alojamientos...
+            </div>
+          ) : error ? (
+            <div className="rounded-2xl border border-rose-200 bg-rose-50 p-6 text-sm text-rose-700 shadow-sm">
+              Error al cargar datos: {error}
             </div>
           ) : visibleListings.length === 0 ? (
             <div className="rounded-2xl border border-stone-200 bg-white p-6 text-sm text-stone-600 shadow-sm">

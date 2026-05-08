@@ -19,7 +19,7 @@ export const listings: Listing[] = [
     price: "115 € noche",
     priceValue: 115,
     rating: 4.82,
-    image: "/airbnb/img_0.jpeg",
+    image: "/img/img_0.jpeg",
     category: "diseno",
     lat: 45.4566,
     lng: 9.2048,
@@ -33,7 +33,7 @@ export const listings: Listing[] = [
     price: "142 € noche",
     priceValue: 142,
     rating: 4.9,
-    image: "/airbnb/img_1.jpg",
+    image: "/img/img_1.jpg",
     category: "tendencias",
     lat: 41.3874,
     lng: 2.1686,
@@ -47,7 +47,7 @@ export const listings: Listing[] = [
     price: "128 € noche",
     priceValue: 128,
     rating: 4.76,
-    image: "/airbnb/img_2.jpeg",
+    image: "/img/img_2.jpeg",
     category: "playa",
     lat: 41.3769,
     lng: 2.1921,
@@ -61,7 +61,7 @@ export const listings: Listing[] = [
     price: "169 € noche",
     priceValue: 169,
     rating: 4.71,
-    image: "/airbnb/img_3.jpeg",
+    image: "/img/img_3.jpeg",
     category: "mansiones",
     lat: 43.7034,
     lng: 7.2663,
@@ -75,7 +75,7 @@ export const listings: Listing[] = [
     price: "154 € noche",
     priceValue: 154,
     rating: 4.89,
-    image: "/airbnb/img_5.png",
+    image: "/img/img_5.png",
     category: "cabanas",
     lat: 41.9029,
     lng: 12.4963,
@@ -89,7 +89,7 @@ export const listings: Listing[] = [
     price: "206 € noche",
     priceValue: 206,
     rating: 4.95,
-    image: "/airbnb/img_8.jpeg",
+    image: "/img/img_8.jpeg",
     category: "mansiones",
     lat: 41.3912,
     lng: 2.1648,
@@ -107,9 +107,9 @@ export const rooms: Room[] = [
     host: {
       name: "Giulia",
       years: 4,
-      avatar: "/airbnb/img_12.jpeg",
+      avatar: "/img/img_12.jpeg",
     },
-    images: ["/airbnb/img_0.jpeg", "/airbnb/img_6.jpeg", "/airbnb/img_9.jpeg"],
+    images: ["/img/img_0.jpeg", "/img/img_6.jpeg", "/img/img_9.jpeg"],
     amenities: [
       { icon: "📶", label: "Wifi rápido" },
       { icon: "🍳", label: "Cocina equipada" },
@@ -129,9 +129,9 @@ export const rooms: Room[] = [
     host: {
       name: "Laia",
       years: 6,
-      avatar: "/airbnb/img_13.jpeg",
+      avatar: "/img/img_13.jpeg",
     },
-    images: ["/airbnb/img_1.jpg", "/airbnb/img_10.jpeg", "/airbnb/img_11.jpeg"],
+    images: ["/img/img_1.jpg", "/img/img_10.jpeg", "/img/img_11.jpeg"],
     amenities: [
       { icon: "📶", label: "Wifi rápido" },
       { icon: "🌇", label: "Balcón" },
@@ -151,9 +151,9 @@ export const rooms: Room[] = [
     host: {
       name: "Marc",
       years: 3,
-      avatar: "/airbnb/img_12.jpeg",
+      avatar: "/img/img_12.jpeg",
     },
-    images: ["/airbnb/img_2.jpeg", "/airbnb/img_4.jpeg", "/airbnb/img_7.jpeg"],
+    images: ["/img/img_2.jpeg", "/img/img_4.jpeg", "/img/img_7.jpeg"],
     amenities: [
       { icon: "🏊", label: "Rooftop con piscina" },
       { icon: "☕", label: "Desayuno incluido" },
@@ -173,9 +173,9 @@ export const rooms: Room[] = [
     host: {
       name: "Claire",
       years: 7,
-      avatar: "/airbnb/img_13.jpeg",
+      avatar: "/img/img_13.jpeg",
     },
-    images: ["/airbnb/img_3.jpeg", "/airbnb/img_6.jpeg", "/airbnb/img_11.jpeg"],
+    images: ["/img/img_3.jpeg", "/img/img_6.jpeg", "/img/img_11.jpeg"],
     amenities: [
       { icon: "🌊", label: "A 10 min de la playa" },
       { icon: "🛏", label: "Cama king" },
@@ -195,9 +195,9 @@ export const rooms: Room[] = [
     host: {
       name: "Alessandro",
       years: 5,
-      avatar: "/airbnb/img_12.jpeg",
+      avatar: "/img/img_12.jpeg",
     },
-    images: ["/airbnb/img_5.png", "/airbnb/img_9.jpeg", "/airbnb/img_10.jpeg"],
+    images: ["/img/img_5.png", "/img/img_9.jpeg", "/img/img_10.jpeg"],
     amenities: [
       { icon: "🌆", label: "Terraza privada" },
       { icon: "🍝", label: "Cocina completa" },
@@ -217,9 +217,9 @@ export const rooms: Room[] = [
     host: {
       name: "Nora",
       years: 8,
-      avatar: "/airbnb/img_13.jpeg",
+      avatar: "/img/img_13.jpeg",
     },
-    images: ["/airbnb/img_8.jpeg", "/airbnb/img_6.jpeg", "/airbnb/img_7.jpeg"],
+    images: ["/img/img_8.jpeg", "/img/img_6.jpeg", "/img/img_7.jpeg"],
     amenities: [
       { icon: "🛁", label: "Jacuzzi privado" },
       { icon: "🍾", label: "Welcome pack" },
@@ -255,27 +255,27 @@ export const aboutFacts = [
 
 export const barcelonaGallery = [
   {
-    image: "/airbnb/img_4.jpeg",
+    image: "/img/img_4.jpeg",
     label: "Lobby cálido con diseño clásico",
   },
   {
-    image: "/airbnb/img_6.jpeg",
+    image: "/img/img_6.jpeg",
     label: "Terraza panorámica para atardeceres",
   },
   {
-    image: "/airbnb/img_7.jpeg",
+    image: "/img/img_7.jpeg",
     label: "Recepción moderna y luminosa",
   },
   {
-    image: "/airbnb/img_9.jpeg",
+    image: "/img/img_9.jpeg",
     label: "Suite compacta con acabados premium",
   },
   {
-    image: "/airbnb/img_10.jpeg",
+    image: "/img/img_10.jpeg",
     label: "Balcón exterior con vista abierta",
   },
   {
-    image: "/airbnb/img_11.jpeg",
+    image: "/img/img_11.jpeg",
     label: "Habitación con estética contemporánea",
   },
 ];

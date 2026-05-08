@@ -24,7 +24,7 @@ export default function BarcelonaPage() {
         <section className="mt-8">
           <div className="relative mx-auto max-w-4xl overflow-hidden rounded-3xl border border-stone-200 shadow-sm">
             <Image
-              src="/airbnb/img_14.png"
+              src="/img/img_14.png"
               alt="Fachada del alojamiento en Barcelona"
               width={1600}
               height={900}

@@ -1,0 +1,22 @@
+{
+  "id": 6,
+  "title": "Apartamento premium con jacuzzi",
+  "location": "Barcelona, España",
+  "rating": 4.95,
+  "reviews": 248,
+  "pricePerNight": 206,
+  "host": {
+    "name": "Nora",
+    "years": 8,
+    "avatar": "/img/img_13.jpeg"
+  },
+  "images": ["/img/img_8.jpeg", "/img/img_6.jpeg", "/img/img_7.jpeg"],
+  "amenities": [
+    {"icon": "🛁", "label": "Jacuzzi privado"},
+    {"icon": "🍾", "label": "Welcome pack"},
+    {"icon": "🌇", "label": "Vistas panorámicas"},
+    {"icon": "📶", "label": "Wifi rápido"},
+    {"icon": "🛏", "label": "Cama king"},
+    {"icon": "🅿", "label": "Parking"}
+  ]
+}

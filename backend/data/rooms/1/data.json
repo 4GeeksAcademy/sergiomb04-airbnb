@@ -1,0 +1,22 @@
+{
+  "id": 1,
+  "title": "Apartamento diseño en Porta Romana",
+  "location": "Milán, Italia",
+  "rating": 4.82,
+  "reviews": 121,
+  "pricePerNight": 115,
+  "host": {
+    "name": "Giulia",
+    "years": 4,
+    "avatar": "/img/img_12.jpeg"
+  },
+  "images": ["/img/img_0.jpeg", "/img/img_6.jpeg", "/img/img_9.jpeg"],
+  "amenities": [
+    {"icon": "📶", "label": "Wifi rápido"},
+    {"icon": "🍳", "label": "Cocina equipada"},
+    {"icon": "❄", "label": "Aire acondicionado"},
+    {"icon": "🧺", "label": "Lavadora"},
+    {"icon": "🛗", "label": "Ascensor"},
+    {"icon": "🧳", "label": "Check-in autónomo"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 5,
+  "title": "Terraza privada con vistas urbanas",
+  "location": "Roma, Italia",
+  "rating": 4.89,
+  "reviews": 166,
+  "pricePerNight": 154,
+  "host": {
+    "name": "Alessandro",
+    "years": 5,
+    "avatar": "/img/img_12.jpeg"
+  },
+  "images": ["/img/img_5.png", "/img/img_9.jpeg", "/img/img_10.jpeg"],
+  "amenities": [
+    {"icon": "🌆", "label": "Terraza privada"},
+    {"icon": "🍝", "label": "Cocina completa"},
+    {"icon": "🛁", "label": "Bañera"},
+    {"icon": "📶", "label": "Wifi rápido"},
+    {"icon": "🧼", "label": "Limpieza semanal"},
+    {"icon": "🚶", "label": "Centro histórico"}
+  ]
+}

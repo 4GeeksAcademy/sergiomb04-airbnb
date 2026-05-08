@@ -1,0 +1,22 @@
+{
+  "id": 2,
+  "title": "Piso luminoso con balcón en el centro",
+  "location": "Barcelona, España",
+  "rating": 4.9,
+  "reviews": 204,
+  "pricePerNight": 142,
+  "host": {
+    "name": "Laia",
+    "years": 6,
+    "avatar": "/img/img_13.jpeg"
+  },
+  "images": ["/img/img_1.jpg", "/img/img_10.jpeg", "/img/img_11.jpeg"],
+  "amenities": [
+    {"icon": "📶", "label": "Wifi rápido"},
+    {"icon": "🌇", "label": "Balcón"},
+    {"icon": "🚇", "label": "Cerca de metro"},
+    {"icon": "💻", "label": "Zona de trabajo"},
+    {"icon": "🧼", "label": "Limpieza incluida"},
+    {"icon": "🛏", "label": "Cama queen"}
+  ]
+}

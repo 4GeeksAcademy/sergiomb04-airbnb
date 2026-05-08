@@ -70,3 +70,58 @@ El usuario es una persona que quiere encontrar alojamiento temporal para vacacio
 - `BookingCard` (integrado)
     - Estado: `guests` con rango mínimo/máximo
     - Props de datos: `pricePerNight`
+
+## Arquitectura del Backend Dinámico
+
+### Concepto
+El backend (`backend/fake_backend.py`) utiliza archivos JSON organizados similar al **App Router de Next.js**, en lugar de hardcodear los datos en Python. Esto permite:
+- Escalabilidad sin cambios de código
+- Separación clara entre lógica y datos
+- Mantenimiento y cambios rápidos
+- Simulación realista de una arquitectura con base de datos
+
+### Estructura de archivos
+```
+backend/
+├── fake_backend.py          # Servidor HTTP (sin datos hardcodeados)
+├── test_data.py            # Validación de estructura JSON
+├── GUIA.md                 # Documentación completa
+└── data/
+    ├── categories.json     # Array de categorías
+    ├── listings.json       # Array de listings principales
+    └── rooms/             # Rutas dinámicas por ID
+        ├── 1/data.json
+        ├── 2/data.json
+        ├── 3/data.json
+        ├── 4/data.json
+        ├── 5/data.json
+        └── 6/data.json
+```
+
+### Endpoints
+| Endpoint | Origen | Descripción |
+|----------|--------|-------------|
+| `GET /health` | - | Estado del servidor |
+| `GET /categories` | `data/categories.json` | Todas las categorías |
+| `GET /listings` | `data/listings.json` | Todos los listings |
+| `GET /rooms` | `data/rooms/*/data.json` | Todos los rooms |
+| `GET /rooms/<id>` | `data/rooms/<id>/data.json` | Room específico por ID |
+
+### Cómo agregar datos nuevos
+**Para agregar un room:**
+1. Crear carpeta: `backend/data/rooms/7/`
+2. Crear archivo: `backend/data/rooms/7/data.json`
+3. Agregar contenido con estructura de Room
+4. El backend lo sirve automáticamente en `/rooms/7`
+
+**Validación:**
+```bash
+python backend/test_data.py
+```
+
+### Ventajas de esta arquitectura
+✅ No requiere editar código Python  
+✅ Fácil agregar/modificar datos  
+✅ Escalable sin cambios de lógica  
+✅ Similar a estructura real con DB  
+✅ Prototipado rápido  

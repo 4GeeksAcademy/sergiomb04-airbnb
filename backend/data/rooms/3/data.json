@@ -1,0 +1,22 @@
+{
+  "id": 3,
+  "title": "Hotel boutique con rooftop",
+  "location": "Barcelona, España",
+  "rating": 4.76,
+  "reviews": 89,
+  "pricePerNight": 128,
+  "host": {
+    "name": "Marc",
+    "years": 3,
+    "avatar": "/img/img_12.jpeg"
+  },
+  "images": ["/img/img_2.jpeg", "/img/img_4.jpeg", "/img/img_7.jpeg"],
+  "amenities": [
+    {"icon": "🏊", "label": "Rooftop con piscina"},
+    {"icon": "☕", "label": "Desayuno incluido"},
+    {"icon": "🛎", "label": "Recepción 24h"},
+    {"icon": "🚕", "label": "Transfer opcional"},
+    {"icon": "❄", "label": "Aire acondicionado"},
+    {"icon": "📺", "label": "Smart TV"}
+  ]
+}

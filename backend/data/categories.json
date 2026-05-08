@@ -1,0 +1,27 @@
+[
+  {
+    "key": "playa",
+    "label": "Playa",
+    "icon": "🏖"
+  },
+  {
+    "key": "mansiones",
+    "label": "Mansiones",
+    "icon": "🏛"
+  },
+  {
+    "key": "tendencias",
+    "label": "Tendencias",
+    "icon": "🔥"
+  },
+  {
+    "key": "cabanas",
+    "label": "Cabañas",
+    "icon": "🏡"
+  },
+  {
+    "key": "diseno",
+    "label": "Diseño",
+    "icon": "🎨"
+  }
+]

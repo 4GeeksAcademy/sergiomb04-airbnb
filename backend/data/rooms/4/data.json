@@ -1,0 +1,22 @@
+{
+  "id": 4,
+  "title": "Suite moderna junto al casco histórico",
+  "location": "Niza, Francia",
+  "rating": 4.71,
+  "reviews": 97,
+  "pricePerNight": 169,
+  "host": {
+    "name": "Claire",
+    "years": 7,
+    "avatar": "/img/img_13.jpeg"
+  },
+  "images": ["/img/img_3.jpeg", "/img/img_6.jpeg", "/img/img_11.jpeg"],
+  "amenities": [
+    {"icon": "🌊", "label": "A 10 min de la playa"},
+    {"icon": "🛏", "label": "Cama king"},
+    {"icon": "🍷", "label": "Minibar"},
+    {"icon": "📶", "label": "Wifi rápido"},
+    {"icon": "🅿", "label": "Parking cercano"},
+    {"icon": "🧳", "label": "Check-in autónomo"}
+  ]
+}

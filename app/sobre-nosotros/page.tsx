@@ -18,6 +18,7 @@ const storySections = [
 ];
 
 const SobreNosotrosPage = () => {
+  
   return (
     <>
       <Navbar />
@@ -38,7 +39,8 @@ const SobreNosotrosPage = () => {
         {storySections.map((section, index) => (
           <section
             key={section.title}
-            className={index % 2 === 0 ? "bg-white" : "bg-[#f2f2f2]"}
+            className={`${index % 2 === 0 ? "bg-white" : "bg-[#f2f2f2]"
+              } py-20`}
           >
             <div className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
               <h2 className="text-3xl font-semibold text-stone-900 md:text-4xl">
@@ -51,20 +53,26 @@ const SobreNosotrosPage = () => {
           </section>
         ))}
 
-        <section className="mx-auto max-w-6xl px-4 py-10 md:px-6 md:py-14">
+        <section className="mx-auto max-[90%] px-4 py-10 md:p-14">
           <h2 className="text-3xl font-semibold text-stone-900 md:text-4xl">
             Datos que nos definen
           </h2>
+
           <div className="mt-6 grid gap-4 md:grid-cols-3">
             {aboutFacts.map((fact) => (
               <article
                 key={fact.title}
-                className="rounded-2xl border border-stone-200 bg-white p-5 shadow-sm"
+                className="rounded-2xl bg-white p-5 overflow-hidden"
               >
-                <h3 className="text-2xl font-semibold text-stone-900">{fact.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-stone-600">
-                  {fact.description}
-                </p>
+                <div className="flex flex-col p-4 min-w-0">
+                  <h3 className="font-sans text-6xl font-semibold text-stone-900 mb-2 break-words">
+                    {fact.title}
+                  </h3>
+
+                  <p className="mt-3 text-xl leading-6 text-stone-600 break-words">
+                    {fact.description}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
